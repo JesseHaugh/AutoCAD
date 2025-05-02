@@ -1,0 +1,1 @@
+FOR %%a IN (*.dwg) DO "C:\Program Files\Autodesk\AutoCAD 2022\accoreconsole.exe" /i "%%a" /s "C:\NV5_CAD_Scripts\scripts\audit.scr"

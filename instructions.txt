@@ -1,0 +1,14 @@
+NV5 CAD scripts
+
+After downloading all updates using "install.bat" you can drag and drop any .BAT file into a folder to have it automattically run on each CAD drawing on the current folder. 
+
+WARNING: This program will only run on Network Drives that are mounted, IE G:\ P:\ Etc. This will not work on a network connected drive or local drive lettering. 
+
+Current Tools:
+
+_wblock_PURGE_folder.bat: This script will run -wblock on all files and save them in a new directory \_PURGE\, This program is used for clearing out corruptions that prevent users from actually working on files
+    by copying the visible data from the folder into a new .dwg drawing entirely, quickly removing and purging more than a standard PURGE will accomplish
+
+_audit_folder.bat: This script will run the "AUDIT" command on all files in the current folder, save and then move to the next file. Useful if audit will save some files and less drastic of a change from -wblock.
+
+

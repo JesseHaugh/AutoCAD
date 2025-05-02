@@ -1,0 +1,2 @@
+IF NOT EXIST "\_PURGE" (mkdir "_PURGE")
+FOR %%a IN (*.dwg) DO "C:\Program Files\Autodesk\AutoCAD 2022\accoreconsole.exe" /i "%%a" /s "C:\Users\jesse.haugh\OneDrive - NV5\Documents\-wblock_script\-wblock.scr"

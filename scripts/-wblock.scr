@@ -1,0 +1,5 @@
+(setq wbFilePath (getvar 'DWGPREFIX) wbFileName(getvar 'DWGNAME))
+(setq wbHalfPath (strcat "_PURGE\\" wbFileName))
+(setq wbFullPath (strcat wbFilePath "_PURGE\\" wbFileName))
+
+(command "-wblock" wbFullPath "*")

@@ -17,9 +17,9 @@
   (if (eq (cdr (assoc 0 (entget ent))) "LWPOLYLINE") ;Check if polyline
   (progn
     (if (< (car (cdr (assoc 10 polylineData))) (car (cdr (assoc 10 (reverse polylineData))))) 
-    (progn
-      (setq leftMost (cdr (assoc 10 polylineData)))
-      (setq reverseResult polylineData))
+      (progn
+        (setq leftMost (cdr (assoc 10 polylineData)))
+        (setq reverseResult polylineData))
     (if (and (<= (car (cdr (assoc 10 polylineData))) (car (cdr (assoc 10 (reverse polylineData))))) (< (car (cdr (cdr (assoc 10 polylineData)))) (car (cdr (cdr (assoc 10 (reverse polylineData)))))))
       (progn
         (setq leftMost (cdr (assoc 10 polylineData)))
@@ -39,9 +39,9 @@
   )))))))))
   (if (eq (cdr (assoc 0 (entget ent))) "LINE") ;check if line
     (if (< (car (cdr (assoc 10 polylineData))) (car (cdr (assoc 11  polylineData)))) 
-        (progn
-          (setq leftMost (cdr (assoc 10 polylineData)))
-          (setq rightMost (cdr (assoc 11 polylineData))))
+      (progn
+        (setq leftMost (cdr (assoc 10 polylineData)))
+        (setq rightMost (cdr (assoc 11 polylineData))))
       (if (< (car (cdr (cdr (assoc 10 polylineData)))) (car (cdr (cdr (assoc 11 polylineData)))))
         (progn
           (setq leftMost (cdr (assoc 10 polylineData)))
@@ -53,9 +53,8 @@
   (setq revAngle (angtos (angle leftmost rightMost))) ; offet the line above and below the set distance
   (setq obj (vlax-ename->vla-object ent)); end vlax-...
   (progn
-        (vla-offset obj offsetDist)
-        (vla-offset obj (- offsetDist))
-      )
+    (vla-offset obj offsetDist)
+    (vla-offset obj (- offsetDist)))
   (progn ; create the MTEXT to be copied on the line
     (command "-MTEXT" leftMost "R" revAngle "J" "MC" "S" textStyle "W" textBackground textMessage "")
     (progn
